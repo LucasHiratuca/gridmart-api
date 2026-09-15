@@ -1,4 +1,4 @@
-import { MiddlewareHandler } from "hono";
+import type { MiddlewareHandler } from "hono";
 
 export const auto404: MiddlewareHandler = async (c, next) => {
     await next(); // Executa a rota normalmente

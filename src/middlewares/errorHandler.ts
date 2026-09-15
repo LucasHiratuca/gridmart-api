@@ -1,4 +1,4 @@
-import { ErrorHandler } from "hono";
+import type { ErrorHandler } from "hono";
 
 export const errorHandler: ErrorHandler = (err, c) => {
     console.error(`[Error] ${c.req.method} ${c.req.path}:`, err);

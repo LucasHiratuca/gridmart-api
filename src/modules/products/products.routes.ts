@@ -52,7 +52,7 @@ productRoutes.put("/:id", zValidator("json", schema.partial()), async (c) =>
         await drizzle(c.env.DB)
             .update(products)
             .set(c.req.valid("json"))
-            .where(eq(products.id, c.req.param("id")))
+            .where(eq(products.id, Number(c.req.param("id"))))
             .returning()
             .get()
     )
@@ -63,7 +63,7 @@ productRoutes.delete("/:id", async (c) =>
     c.json(
         await drizzle(c.env.DB)
             .delete(products)
-            .where(eq(products.id, c.req.param("id")))
+            .where(eq(products.id, Number(c.req.param("id"))))
             .returning()
             .get()
     )

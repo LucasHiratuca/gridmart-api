@@ -6,7 +6,9 @@ export const users = sqliteTable("users", {
   cpf: text().notNull().unique(),
   name: text().notNull(),
   isBlocked: integer({ mode: "boolean" }).default(false),
-  createdAt: text().notNull(),
+  createdAt: text()
+    .notNull()
+    .$defaultFn(() => new Date().toISOString()),
 });
 
 // 2. LOGS DE ACESSO (Auditoria da trava da porta)
@@ -14,7 +16,9 @@ export const accessLogs = sqliteTable("access_logs", {
   id: integer().primaryKey({ autoIncrement: true }), // SQLite gera sozinho!
   cpf: text().notNull(),
   status: text().notNull(), // 'GRANTED' | 'DENIED'
-  createdAt: text().notNull(),
+  createdAt: text()
+    .notNull()
+    .$defaultFn(() => new Date().toISOString()),
 });
 
 // 3. PRODUTOS (Catálogo lido pelo leitor de código de barras)
@@ -31,10 +35,10 @@ export const sales = sqliteTable("sales", {
   totalInCents: integer().notNull(),
   status: text().notNull(), // 'PENDING' | 'PAID' | 'EXPIRED'
   pixQrCode: text(),
-  createdAt: text().notNull(),
+  createdAt: text()
+    .notNull()
+    .$defaultFn(() => new Date().toISOString()),
 });
-
-function:
 
 // 5. ITENS DA VENDA (Carrinho consolidado por produto)
 export const saleItems = sqliteTable("sale_items", {

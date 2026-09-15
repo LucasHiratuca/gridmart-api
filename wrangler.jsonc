@@ -1,0 +1,14 @@
+
+{
+  "name": "gridmart-api",
+  "compatibility_date": "2026-08-14",
+  "main": "src/index.ts",
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "gridmart-db",
+      "database_id": "local-d1",
+      "migrations_dir": "drizzle"
+    }
+  ]
+}
