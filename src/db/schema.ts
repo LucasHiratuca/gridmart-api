@@ -43,10 +43,10 @@ export const sales = sqliteTable("sales", {
 // 5. ITENS DA VENDA (Carrinho consolidado por produto)
 export const saleItems = sqliteTable("sale_items", {
   id: integer().primaryKey({ autoIncrement: true }), // SQLite gera sozinho!
-  saleId: text()
+  saleId: integer()
     .notNull()
     .references(() => sales.id),
-  productId: text()
+  productId: integer()
     .notNull()
     .references(() => products.id),
   priceInCents: integer().notNull(),
