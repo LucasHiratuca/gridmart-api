@@ -1,0 +1,27 @@
+{
+  "version": "7",
+  "dialect": "sqlite",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "6",
+      "when": 1786676003556,
+      "tag": "0000_long_thor_girl",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "6",
+      "when": 1790293245931,
+      "tag": "0001_dry_inhumans",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "6",
+      "when": 1790293774567,
+      "tag": "0002_breezy_demogoblin",
+      "breakpoints": true
+    }
+  ]
+}
